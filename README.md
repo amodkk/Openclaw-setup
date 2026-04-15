@@ -8,7 +8,15 @@
     - Dashboard screenshot
       ![Alt text](dashboard.png)
 - GATEWAY TOKEN: aa6b063e906f2f4e3ce6e66669719b78a5838a827f57f3758aa941129c704413█
-
+- Use ```docker ps``` to see health of active docker containers. (Docker image & containers are diff things.)
+  - **Docker image** a frozen “snapshot” of your app and everything it needs to run (like a template)
+  - **Docker container** a running copy of that image (like the app actually turned on and running)
+  - E.G 
+  ```cmd
+  C:\Users\amodk\Documents\repos\Openclaw-setup>docker ps
+  CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
+  08cc50a5471b   openclaw:local   "docker-entrypoint.s…"   18 minutes ago   Up 18 minutes (healthy)   0.0.0.0:18789-18790->18789-18790/tcp, [::]:18789-18790->18789-18790/tcp   openclaw-openclaw-gateway-1
+  ```
 
 ## Revisit in future 
 
