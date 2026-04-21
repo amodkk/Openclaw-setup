@@ -1,9 +1,7 @@
-### Progress Log of OpenClaw setup within Docker 
-#### Tracking progress of openclaw setup. 
----
+### **Progress log of OpenClaw setup within Docker**
 
 
-## Reference / Quick-access section
+### Reference / Quick-access section
 
 - [LOCALHOST CONTROL URL / GATEWAY DASHBOARD](http://localhost:18789/)
     - Dashboard screenshot
@@ -20,7 +18,16 @@
   ```
   - NOTE: ```docker ps``` will only run successfully if docker desktop is actively running. I've configured **Docker Desktop** to startup automatically upon login. 
 
-## Revisit in future 
+### Notable work (repo history)
+
+| Date | Work Done (summary) | Work Done (extended description) |
+|------|----------------------|----------------------------------|
+| 04/14/2026 | **Baseline gateway running + UI reachable**<br>Completed the first working Docker run and confirmed the local Control UI/dashboard was accessible from the host browser. | Baseline OpenClaw-in-Docker setup completed and verified (control dashboard reachable); quick-access notes and open follow-ups captured (e.g. GitHub skill / `gh` still to configure). |
+| 04/14/2026 | **README updated with Docker setup + troubleshooting**<br>Consolidated the key setup steps (env, onboarding, compose/run) plus Windows-specific verification and troubleshooting guidance. | Top-level documentation refreshed: progress log surfaced as `README.md`, then expanded with Docker-centric setup, verification, and Windows-oriented guidance. |
+| 04/20/2026 | **Repo cleanup: renamed files + clarified log vs overview**<br>Standardized filenames and separated the short `README.md` overview from the detailed `ProgressLog.md`. | Files renamed for consistency across repos; detailed progress kept in this `ProgressLog.md` while `README.md` holds a short overview. |
+| 04/21/2026 | **GitHub skill enabled: installed `gh` + authenticated**<br>Installed GitHub CLI inside the running container and logged it in using a classic token, then verified `gh auth status`. | Configured GitHub skill auth inside the running OpenClaw Docker container using a GitHub classic token. Commands: <br><br>**Configuring docker openclaw to use github classic token (PowerShell):**<br>`echo <github classic token> \| docker exec -i openclaw-openclaw-gateway-1 sh -lc "gh auth login --hostname github.com --with-token"`<br><br>**Check if openclaw is authenticated correctly:**<br>`docker exec openclaw-openclaw-gateway-1 sh -lc "gh auth status"`<br><br>**Terminal output:**<br>`github.com`<br>`  ✓ Logged in to github.com as amodkk (/home/node/.config/gh/hosts.yml)`<br>`  ✓ Git operations for github.com configured to use https protocol.`<br>`  ✓ Token: ghp_************************************`<br>`  ✓ Token scopes: project, read:org, repo, workflow` |
+
+### Revisit in future 
 
 ### URGENT (Github configuration)
 ```bash
@@ -70,7 +77,7 @@ Docs: https://docs.openclaw.ai/skills
 
 
 ```MD 
-## Network Mode Guidance
+### Network Mode Guidance
 
 ### Use LAN (recommended if you run OpenClaw in Docker on Windows)
 Official Docker documentation defaults to LAN so your browser on the same machine can access:
